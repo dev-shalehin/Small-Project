@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accordion</title>
+    <!-- Font Awsome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="accordion--container">
+      <div class="accordion">
+        <!-- Item 1 -->
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span>How to learn UI/UX?</span>
+            <span class="icon"><i class="fa-solid fa-plus"></i></span>
+          </button>
+          <div class="accordion-content">
+            <p>
+              Learning UI/UX design requires a mix of theory, practice, and
+              real-world examples. Start by understanding the basic principles
+              of design such as color theory, typography, spacing, and visual
+              hierarchy. Then move on to UX fundamentals like user research,
+              wireframing, prototyping, and usability testing.
+            </p>
+            <p>
+              You can use tools like Figma or Adobe XD to practice designing
+              interfaces. Most importantly, analyze popular apps and websites to
+              understand why certain design choices work well for users.
+            </p>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="accordion-item active">
+          <button class="accordion-header">
+            <span class="active-title">What is Acme?</span>
+            <span class="icon"><i class="fa-solid fa-minus"></i></span>
+          </button>
+          <div class="accordion-content show">
+            <p>
+              Acme is a modern learning platform focused on helping beginners
+              and intermediate learners understand UI/UX design in a simple,
+              practical way. It provides structured courses, real-world case
+              studies, and hands-on projects to ensure effective learning.
+            </p>
+            <p>
+              With Acme, learners can build strong design fundamentals while
+              creating portfolio-ready projects. The platform emphasizes
+              learning by doing, not just watching videos or reading theory.
+            </p>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span>Is it free?</span>
+            <span class="icon"><i class="fa-solid fa-plus"></i></span>
+          </button>
+          <div class="accordion-content">
+            <p>
+              Acme offers both free and premium learning options. The free plan
+              includes access to basic UI/UX lessons and introductory design
+              resources.
+            </p>
+            <p>
+              The premium plan unlocks advanced courses, mentor support,
+              downloadable resources, and real-world projects. This flexible
+              pricing structure allows learners to start for free and upgrade
+              when they feel ready to go deeper.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
