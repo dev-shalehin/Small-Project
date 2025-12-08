@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Countdown</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <section class="countdown" aria-labelledby="countdown-title" data-target="2026-01-01T00:00:00Z">
+      <h2 id="countdown-title" class="countdown__title">Offer End Soon</h2>
+
+      <div class="countdown__grid" role="list" aria-label="Time remaining">
+        <div class="countdown__item" role="listitem" aria-live="polite">
+          <div class="countdown__value" id="days">00</div>
+          <div class="countdown__label">Days</div>
+        </div>
+
+        <div class="countdown__item" role="listitem" aria-live="polite">
+          <div class="countdown__value" id="hours">00</div>
+          <div class="countdown__label">Hours</div>
+        </div>
+
+        <div class="countdown__item" role="listitem" aria-live="polite">
+          <div class="countdown__value" id="minutes">00</div>
+          <div class="countdown__label">Minutes</div>
+        </div>
+
+        <div class="countdown__item" role="listitem" aria-live="polite">
+          <div class="countdown__value" id="seconds">00</div>
+          <div class="countdown__label">seconds</div>
+        </div>
+      </div>
+
+      <p class="countdown__note">Deadline: <strong class="countdown__target">11 December 2025</strong></p>
+    </section>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>
