@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Expense Tracker</title>
+    <!-- Font Aswome -->
+    <!-- CSS File -->
+    <link rel="stylesheet" href="output.css" />
+  </head>
+  <body class="bg-[#0f0f0f] text-gray-300">
+    <div class="flex min-h-screen">
+      <!-- Sidebar -->
+      <aside
+        class="hidden md:flex w-64 flex-col bg-[#151515] border-r border-gray-800"
+      >
+        <div class="px-6 py-6 text-xl font-bold text-teal-400">Expensio</div>
+
+        <ul class="flex-1 space-y-2 px-4 text-sm">
+          <li class="bg-[#1f1f1f] rounded-lg">
+            <a class="flex items-center gap-3 px-4 py-2 text-teal-400" href="#">
+              🏠 Dashboard
+            </a>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="flex-1 p-4 md:p-8 space-y-6">
+        <!-- Header -->
+        <div class="flex justify-between items-center">
+          <h1 class="text-xl md:text-2xl font-semibold text-white">
+            Expense Dashboard
+          </h1>
+
+          <div class="flex items-center gap-5">
+            <input id="income"
+              type="text"
+              placeholder="Enter your income"
+              class="px-4 py-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+            />
+            <button
+              id="addIncimeBtn"
+              class="bg-teal-500 hover:bg-teal-600 text-whiteS px-4 py-2 rounded-lg text-sm"
+            >
+              + Add Income
+            </button>
+          </div>
+        </div>
+
+        <!-- Add Expence  -->
+        <div class="bg-[#181818] p-4 rounded-xl border border-gray-800 mb-6">
+          <h3 class="text-white text-lg font-semibold mb-4">Add New Expense</h3>
+
+            <!-- Title -->
+            <form class="grid grid-cols-1 md:grid-cols-5 gap-3" id="form">
+              <input
+              id="expenseTitle"
+              type="text"
+              placeholder="Title"
+              class="px-3 py-2 rounded-lg bg-[#121212] text-white border border-gray-700 focus:ring-2 focus:ring-teal-500 focus:outline-none"
+            />
+
+            <!-- Category -->
+            <select
+              id="expenseCategory"
+              class="px-3 py-2 rounded-lg bg-[#121212] text-white border border-gray-700 focus:ring-2 focus:ring-teal-500 focus:outline-none"
+            >
+              <option value="">Category</option>
+              <option>Grocery</option>
+              <option>Food</option>
+              <option>Transport</option>
+              <option>Bills</option>
+              <option>Other</option>
+            </select>
+
+           
+
+            <!-- Amount -->
+            <input
+              id="expenseAmount"
+              type="text"
+              placeholder="Amount"
+              class="px-3 py-2 rounded-lg bg-[#121212] text-white border border-gray-700 focus:ring-2 focus:ring-teal-500 focus:outline-none"
+            />
+
+             <!-- Button -->
+            <button
+              id="addExpenseBtn"
+              class="bg-teal-500 hover:bg-teal-600 text-black font-semibold rounded-lg px-4 py-2"
+            >
+              + Add
+            </button>
+            </form>
+
+           
+        
+        </div>
+
+        <!-- Summary Cards -->
+        <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="bg-[#181818] p-4 rounded-xl border border-gray-800">
+            <p class="text-sm text-gray-400">Total Balance</p>
+            <h2 id="totalBalance" class="text-2xl font-bold text-white">00</h2>
+          </div>
+
+          <div class="bg-[#181818] p-4 rounded-xl border border-gray-800">
+            <p class="text-sm text-gray-400">Expense</p>
+            <h2 id="expence" class="text-2xl font-bold text-red-400">00</h2>
+          </div>
+
+          <div class="bg-[#181818] p-4 rounded-xl border border-gray-800">
+            <p class="text-sm text-gray-400">Income</p>
+            <h2 id="incomeDisplay" class="text-2xl font-bold text-green-400">00</h2>
+          </div>
+
+          <div class="bg-[#181818] p-4 rounded-xl border border-gray-800">
+            <p class="text-sm text-gray-400">Savings</p>
+            <h2 class="text-2xl font-bold text-teal-400">00</h2>
+          </div>
+        </section>
+
+        <!-- Expense Table -->
+        <section
+          class="bg-[#181818] rounded-xl border border-gray-800 overflow-x-auto"
+        >
+          <ul>
+            <li class="flex items-center justify-between p-3">
+              <span class="w-12"><b>Title</b></span>
+              <span class="w-8"><b>Catagorey</b></span>
+              <span><b>Date</b></span> <span><b>Amount</b></span>
+            </li>
+          </ul>
+          <ul id="expenceList">
+            <li class="item">
+              <span class="title">Rice, Oil</span>
+              <span class="catg">Grocery</span>
+              <span class="date">14/12/2025</span>
+              <span class="cost"><b>৳</b>50</span>
+            </li>
+          </ul>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
