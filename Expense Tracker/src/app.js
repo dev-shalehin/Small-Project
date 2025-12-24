@@ -24,6 +24,8 @@ function creatingExpence(title, catg, date, cost) {
 }
 
 // Adding Expence
+  let totalExpence = 0;
+  let totalIncome = 0;
 function addExpence() {
   const expenseTitle = document.getElementById("expenseTitle").value;
   const expenseCategory = document.getElementById("expenseCategory").value;
@@ -33,37 +35,9 @@ function addExpence() {
   if (!isNaN(expenseAmount) && expenseAmount > 0) {
     // Calling Expence add function
     creatingExpence(expenseTitle, expenseCategory, expenseDate, expenseAmount);
-
-    // const prevExpence = Number(expence.textContent) || 0;
-    // const totalExpence = prevExpence + expenseAmount;
-    // expence.innerHTML = totalExpence;
-
-    const expence =
-      (Number(document.getElementById("expence").textContent) || 0) +
-      expenseAmount;
-
-    const income =
-      Number(document.getElementById("incomeDisplay").textContent) || 0;
-    document.getElementById("expence").textContent = expence;
-    if (income < expence) {
-      document.getElementById("expence").textContent = `- ${expence}`;
-      // console.log('hi');
-    } else {
-      document.getElementById("expence").textContent = expence;
-      // console.log('hlw');
-    }
-
-    // const expence = Number(document.getElementById('expence').textContent) || 0;
-    // const prevExpence = Number(expence.textContent) ;
-    // expence.textContent = prevExpence + expenseAmount;
-    // console.log(expence);
-
-    // const income = document.getElementById('incomeDisplay');
-    // if(income< expence){
-    //   document.getElementById('expence').textContent = ;
-    // }else{
-    //   document.getElementById('expence').textContent = expence;
-    // }
+    totalExpence += expenseAmount;
+    autoUpdate()
+    
   } else alert("Please Enter Valid Input");
 
   document.getElementById("form").reset();
@@ -71,26 +45,28 @@ function addExpence() {
 
 // Adding Expence
 function addIncome() {
-  const incomeInput = document.getElementById("income");
-  const incomeDisplay = document.getElementById("incomeDisplay");
-  // const expence = document.getElementById('expence');
-
-  const income = Number(incomeInput.value) || 0;
-  const prevIncome = Number(incomeDisplay.innerText) || 0;
-  const totalExpence = Number(expence.textContent) || 0;
-
-  const totalIncome = prevIncome + income;
-  incomeDisplay.innerText = totalIncome;
-
-  // if(totalExpence > totalIncome){
-  //   expence.textContent = `-${totalExpence}`
-  // }else expence;
+  const incomeInput = Number(document.getElementById("income").value);
+  if(!isNaN(incomeInput) && incomeInput > 0){
+    totalIncome+=incomeInput;
+    autoUpdate();
+  }
 
   incomeInput.value = "";
 
-  return totalIncome;
+  // return totalIncome;
 }
 
+function autoUpdate(){
+    const incomeDisplay = document.getElementById("incomeDisplay");
+    const expence = document.getElementById("expence")
+    incomeDisplay.textContent = totalIncome;
+
+    if (totalExpence > totalIncome) {
+      expence.textContent = `- ${totalExpence}`;
+    } else {
+      expence.textContent = totalExpence;
+    }
+}
 
 // Control Switch
 document.getElementById("addIncimeBtn").addEventListener("click", addIncome);
@@ -98,5 +74,3 @@ document.getElementById("addExpenseBtn").addEventListener("click", (e) => {
   e.preventDefault();
   addExpence();
 });
-
-
