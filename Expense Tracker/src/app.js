@@ -74,3 +74,21 @@ document.getElementById("addExpenseBtn").addEventListener("click", (e) => {
   e.preventDefault();
   addExpence();
 });
+
+
+
+const num = [3,6,89,45,76,90,32,34,67];
+let height = -Infinity;
+let second_height = -Infinity;
+
+for (let n of num){
+  if(n > height){
+    second_height = height;
+    height = n;
+  }else if(n > second_height && n !=height){
+    second_height =n;
+  }
+}
+
+// console.log("Highest:", height);
+console.log("Second Highest:", second_height);
